@@ -1,1 +1,547 @@
+/* =========================================
+   PORTFOLIO — VISUAL FOUNDATION
+   ========================================= */
 
+:root {
+    --ivory: #fcf8f8;
+    --blush: #f4dde0;
+    --soft-blush: #f8e9ea;
+    --rose: #d49aa1;
+    --dusty-rose: #c9858d;
+    --mauve: #8d6269;
+    --charcoal: #292526;
+    --muted: #756a6c;
+    --white: #ffffff;
+
+    --radius-large: 28px;
+    --radius-medium: 18px;
+
+    --shadow-soft: 0 15px 40px rgba(80, 45, 50, 0.08);
+    --transition: 0.35s ease;
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    border: none;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px 6%;
+
+    background: rgba(252, 248, 248, 0.88);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(141, 98, 105, 0.1);
+}
+
+.logo {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color var(--transition);
+}
+
+nav a:hover {
+    color: var(--dusty-rose);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 140px 8% 80px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-intro {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--mauve);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: -0.06em;
+    font-weight: 700;
+}
+
+h1 span {
+    color: var(--dusty-rose);
+}
+
+.intro-text {
+    max-width: 430px;
+    margin-top: 30px;
+
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   SKILL MAP
+   ========================================= */
+
+.skill-map {
+    position: relative;
+
+    width: min(850px, 90vw);
+    height: 470px;
+
+    margin: 50px auto 0;
+}
+
+
+/* Decorative connection lines */
+
+.skill-map::before,
+.skill-map::after {
+    content: "";
+    position: absolute;
+
+    background: var(--blush);
+
+    z-index: 0;
+}
+
+.skill-map::before {
+    width: 65%;
+    height: 2px;
+
+    left: 17%;
+    top: 50%;
+
+    transform: rotate(-12deg);
+}
+
+.skill-map::after {
+    width: 55%;
+    height: 2px;
+
+    left: 22%;
+    top: 50%;
+
+    transform: rotate(25deg);
+}
+
+
+/* Skill nodes */
+
+.skill-node {
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    border: 1px solid var(--blush);
+
+    box-shadow: var(--shadow-soft);
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--charcoal);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+    
+    z-index: 2;
+}
+
+.skill-node span {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.skill-node small {
+    color: var(--muted);
+    font-size: 0.72rem;
+    margin-top: 4px;
+}
+
+.skill-node:hover {
+    transform: scale(1.12);
+    background: var(--soft-blush);
+    box-shadow: 0 20px 50px rgba(80, 45, 50, 0.14);
+}
+
+
+/* Node positions */
+
+.web {
+    left: 5%;
+    top: 20%;
+}
+
+.data {
+    left: 30%;
+    top: 2%;
+}
+
+.ai {
+    right: 7%;
+    top: 17%;
+}
+
+.systems {
+    left: 22%;
+    bottom: 2%;
+}
+
+.knowledge {
+    right: 22%;
+    bottom: 0;
+}
+
+
+/* Hint */
+
+.map-hint {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   SKILL DETAIL
+   ========================================= */
+
+.skill-detail {
+    min-height: 100vh;
+
+    padding: 140px 8% 100px;
+
+    background: var(--soft-blush);
+
+    display: none;
+}
+
+.skill-detail.active {
+    display: block;
+}
+
+.back-button {
+    background: transparent;
+    color: var(--mauve);
+
+    cursor: pointer;
+
+    margin-bottom: 70px;
+
+    font-size: 0.85rem;
+}
+
+.back-button:hover {
+    color: var(--charcoal);
+}
+
+.skill-detail h2 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    margin-bottom: 25px;
+}
+
+#skill-description {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 70px;
+}
+
+
+/* =========================================
+   PROJECT GRID
+   ========================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--white);
+
+    border-radius: var(--radius-large);
+
+    padding: 35px;
+
+    min-height: 280px;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(80, 45, 50, 0.12);
+}
+
+.project-number {
+    color: var(--rose);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+}
+
+.project-card h3 {
+    margin-top: 50px;
+
+    font-size: 1.7rem;
+}
+
+.project-card p {
+    margin-top: 12px;
+
+    color: var(--muted);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.project-tags span {
+    background: var(--soft-blush);
+
+    color: var(--mauve);
+
+    padding: 6px 10px;
+
+    border-radius: 30px;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================
+   ABOUT / CONTACT
+   ========================================= */
+
+.simple-section {
+    min-height: 70vh;
+
+    padding: 120px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 1000px;
+}
+
+.simple-section h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+.simple-section p:not(.eyebrow) {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 40px 8%;
+
+    border-top: 1px solid var(--blush);
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 20px 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding: 120px 5% 50px;
+    }
+
+    h1 {
+        font-size: clamp(3.5rem, 16vw, 5rem);
+    }
+
+    .skill-map {
+        height: 500px;
+        width: 100%;
+    }
+
+    .skill-node {
+        width: 115px;
+        height: 115px;
+    }
+
+    .skill-node span {
+        font-size: 0.75rem;
+    }
+
+    .skill-node small {
+        font-size: 0.62rem;
+    }
+
+    .web {
+        left: 0;
+        top: 15%;
+    }
+
+    .data {
+        left: 34%;
+        top: 0;
+    }
+
+    .ai {
+        right: 0;
+        top: 18%;
+    }
+
+    .systems {
+        left: 12%;
+        bottom: 8%;
+    }
+
+    .knowledge {
+        right: 10%;
+        bottom: 5%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-detail,
+    .simple-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
