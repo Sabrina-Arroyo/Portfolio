@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Portfolio | Your Name</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="#" class="logo">YOUR NAME</a>
+
+        <nav>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO / SKILL MAP -->
+
+        <section id="skills" class="hero">
+
+            <div class="hero-intro">
+                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>
+                    Explore what<br>
+                    I <span>build.</span>
+                </h1>
+
+                <p class="intro-text">
+                    An interactive collection of skills, projects,
+                    and things I've created.
+                </p>
+            </div>
+
+
+            <!-- INTERACTIVE SKILL MAP -->
+
+            <div class="skill-map">
+
+                <button class="skill-node web" data-skill="web">
+                    <span>WEB</span>
+                    <small>Development</small>
+                </button>
+
+                <button class="skill-node data" data-skill="data">
+                    <span>DATA</span>
+                    <small>Analytics</small>
+                </button>
+
+                <button class="skill-node ai" data-skill="ai">
+                    <span>AI</span>
+                    <small>Automation</small>
+                </button>
+
+                <button class="skill-node systems" data-skill="systems">
+                    <span>SYSTEMS</span>
+                    <small>Process</small>
+                </button>
+
+                <button class="skill-node knowledge" data-skill="knowledge">
+                    <span>KNOWLEDGE</span>
+                    <small>Management</small>
+                </button>
+
+            </div>
+
+            <p class="map-hint">
+                Select a skill to explore
+            </p>
+
+        </section>
+
+
+        <!-- SKILL DETAIL AREA -->
+
+        <section id="skill-detail" class="skill-detail">
+
+            <button id="close-skill" class="back-button">
+                ← Back to all skills
+            </button>
+
+            <p id="skill-category" class="eyebrow"></p>
+
+            <h2 id="skill-title"></h2>
+
+            <p id="skill-description"></p>
+
+
+            <div id="project-grid" class="project-grid">
+
+                <!-- Projects will be generated here with JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section id="about" class="simple-section">
+
+            <p class="eyebrow">ABOUT</p>
+
+            <h2>A little about me.</h2>
+
+            <p>
+                This space will eventually introduce who I am,
+                what I do, and how I approach solving problems.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="simple-section">
+
+            <p class="eyebrow">CONTACT</p>
+
+            <h2>Let's connect.</h2>
+
+            <p>
+                Contact information and professional links will
+                go here.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Your Name</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
